@@ -2,6 +2,7 @@ package com.bluecup.hongyu.mocku2020;
 
 import android.app.Application;
 
+import com.bluecup.hongyu.mocku2020.data.Injector;
 import com.bluecup.hongyu.mocku2020.data.LumberYard;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
@@ -28,5 +29,13 @@ public class App extends Application {
 
         objectGraph = ObjectGraph.create(Module.list(this));
         objectGraph.inject(this);
+    }
+
+    @Override
+    public Object getSystemService(String name) {
+        if (Injector.matchesService(name)) {
+            return objectGraph;
+        }
+        return super.getSystemService(name);
     }
 }

@@ -1,9 +1,11 @@
-package com.bluecup.hongyu.mocku2020;
+package com.bluecup.hongyu.mocku2020.ui;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.bluecup.hongyu.mocku2020.R;
+
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

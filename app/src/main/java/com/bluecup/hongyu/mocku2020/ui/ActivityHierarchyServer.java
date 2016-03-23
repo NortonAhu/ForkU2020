@@ -9,8 +9,8 @@ import android.os.Bundle;
  * Created by hongyu
  * Date:16/3/22_下午7:37
  */
-public interface ActivityHierarchyService extends Application.ActivityLifecycleCallbacks {
-    ActivityHierarchyService NONE = new ActivityHierarchyService() {
+public interface ActivityHierarchyServer extends Application.ActivityLifecycleCallbacks {
+    ActivityHierarchyServer NONE = new ActivityHierarchyServer() {
         @Override
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
 
