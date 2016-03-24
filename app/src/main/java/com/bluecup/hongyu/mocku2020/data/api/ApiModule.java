@@ -6,6 +6,7 @@ import com.squareup.moshi.Moshi;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import dagger.Module;
 import dagger.Provides;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -18,6 +19,10 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
  * Created by hongyu
  * Date:16/3/23_下午2:20
  */
+@Module(
+        complete = false,
+        library = true
+)
 public final class ApiModule {
     private static final HttpUrl PRODUCTION_API_URL = HttpUrl.parse("https://api.github.com/");
 

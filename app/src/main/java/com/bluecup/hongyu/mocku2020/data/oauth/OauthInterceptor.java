@@ -4,6 +4,8 @@ import com.f2prateek.rx.preferences.Preference;
 
 import java.io.IOException;
 
+import javax.inject.Inject;
+
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -26,6 +28,7 @@ public final class OauthInterceptor implements Interceptor {
         return chain.proceed(builder.build());
     }
 
+    @Inject
     public OauthInterceptor(@AccessToken Preference<String> accessToken) {
         this.accessToken = accessToken;
     }

@@ -17,7 +17,8 @@ import dagger.ObjectGraph;
  */
 public class App extends Application {
 
-    @Inject ActivityLifecycleCallbacks activityLifecycleCallbacks;
+    @Inject
+    ActivityLifecycleCallbacks activityLifecycleCallbacks;
     @Inject
     LumberYard lumberYard;
     private ObjectGraph objectGraph;
@@ -29,6 +30,8 @@ public class App extends Application {
 
         objectGraph = ObjectGraph.create(Module.list(this));
         objectGraph.inject(this);
+        lumberYard.cleanUp();
+        registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
     }
 
     @Override
