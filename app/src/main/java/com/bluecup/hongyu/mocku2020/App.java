@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.bluecup.hongyu.mocku2020.data.Injector;
 import com.bluecup.hongyu.mocku2020.data.LumberYard;
+import com.bluecup.hongyu.mocku2020.ui.ActivityHierarchyServer;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
 import javax.inject.Inject;
@@ -18,7 +19,7 @@ import dagger.ObjectGraph;
 public class App extends Application {
 
     @Inject
-    ActivityLifecycleCallbacks activityLifecycleCallbacks;
+    ActivityHierarchyServer activityHierarchyServer;
     @Inject
     LumberYard lumberYard;
     private ObjectGraph objectGraph;
@@ -31,7 +32,7 @@ public class App extends Application {
         objectGraph = ObjectGraph.create(Module.list(this));
         objectGraph.inject(this);
         lumberYard.cleanUp();
-        registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
+        registerActivityLifecycleCallbacks(activityHierarchyServer);
     }
 
     @Override

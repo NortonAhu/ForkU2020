@@ -10,8 +10,8 @@ import com.google.common.base.Preconditions;
  * Date:16/3/23_下午3:04
  */
 public class User {
-    private final String login;
-    private final String avator_url;
+    public final String login;
+    public final String avator_url;
 
     public User(String login, @NonNull String avator_url) {
         this.login = Preconditions.checkNotNull(login, "login == null");

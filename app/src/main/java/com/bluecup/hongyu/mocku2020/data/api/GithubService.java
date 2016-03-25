@@ -1,9 +1,7 @@
 package com.bluecup.hongyu.mocku2020.data.api;
 
-import com.bluecup.hongyu.mocku2020.data.api.module.Repository;
+import com.bluecup.hongyu.mocku2020.data.api.module.RepositoriesResponse;
 import com.bluecup.hongyu.mocku2020.data.api.module.Sort;
-
-import java.util.List;
 
 import retrofit2.adapter.rxjava.Result;
 import retrofit2.http.GET;
@@ -17,9 +15,9 @@ import rx.Observable;
  */
 public interface GithubService {
     @GET("search/repositories")
-    Observable<Result<List<Repository>>> repositories(//
-                                                      @Query("q") SearchQuery query,
-                                                      @Query("sort") Sort sort,
-                                                      @Query("order") Order order
+    Observable<Result<RepositoriesResponse>> repositories(//
+                                                                @Query("q") SearchQuery query,
+                                                                @Query("sort") Sort sort,
+                                                                @Query("order") Order order
     );
 }
